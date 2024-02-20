@@ -1,70 +1,83 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+   
 
-## Available Scripts
+🔍 Table of Contents
+💻 Stack
 
-In the project directory, you can run:
+📝 Project Summary
 
-### `npm start`
+⚙️ Setting Up
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🚀 Run Locally
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🙌 Contributors
 
-### `npm test`
+📄 License
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+💻 Stack
+axios: HTTP client for server-client communication.
 
-### `npm run build`
+react: JavaScript library for building user interfaces.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+react-query: Data fetching and state management library.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+react-router-dom: Declarative routing for React applications.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+formik: Form library for React to handle form state.
 
-### `npm run eject`
+yup: Schema validation for form inputs.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+react-toastify: Notification system for React applications.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+bootstrap: Front-end framework for styling and UI components.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+📝 Project Summary
+src: Main source code directory for project components.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+public: Contains static assets for the project.
 
-## Learn More
+src/components: Houses various UI components for different sections.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+src/Layouts: Contains layout components for structuring pages.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+src/context: Manages state and data sharing across components.
 
-### Code Splitting
+src/assests/images: Stores image assets used in the project.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+src/protectedroutes: Handles routing for protected routes in the application.
 
-### Analyzing the Bundle Size
+src/components/ProductDetails: Component for displaying detailed product information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+src/components/Cart: Component for managing the user's shopping cart.
 
-### Making a Progressive Web App
+src/components/Home: Main landing page component displaying home content.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+⚙️ Setting Up
+Your Environment Variable
+Step 1
 
-### Advanced Configuration
+Step 2
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+🚀 Run Locally
+1.Clone the React-E-commerce repository:
 
-### Deployment
+git clone https://github.com/Joe-A11-RM/React-E-commerce
+2.Install the dependencies with one of the package managers listed below:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+pnpm install
+bun install
+npm install
+yarn install
+3.Start the development mode:
 
-### `npm run build` fails to minify
+pnpm dev
+bun dev
+npm run dev
+yarn dev
+🙌 Contributors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Joe-A11-RM
+2 contributions
+
+📄 License
+Add Your License
