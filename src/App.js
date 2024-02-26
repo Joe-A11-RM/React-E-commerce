@@ -1,6 +1,10 @@
 import React from "react";
 import Categories from "./components/Categories/Categories";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  createHashRouter,
+} from "react-router-dom";
 import Mainlayout from "./Layouts/Mainlayout";
 import Home from "./components/Home/Home";
 import Products from "./components/Products/Products";
@@ -22,8 +26,12 @@ import Allorders from "./components/AllOrders/Allorders";
 import BrandDetails from "./components/BrandDetails/BrandDetails";
 import ProductContext from "./context/ProductContext";
 import Categorydetails from "./components/Category/Categorydetails";
+import ResetPassword from "./components/ResetPassword/ResetPassword";
+import VerifyCode from "./components/VerifyCode/VerifyCode";
+import NewPassword from "./components/NewPassword/NewPassword";
+import WishListContext from "./context/WishlistContext";
 export default function App() {
-  let routes = createBrowserRouter([
+  let routes = createHashRouter([
     {
       path: "/",
       element: <Mainlayout />,
@@ -133,6 +141,9 @@ export default function App() {
       children: [
         { path: "signup", element: <Signup /> },
         { path: "signin", element: <Signin /> },
+        { path: "resetpassword", element: <ResetPassword /> },
+        { path: "verifycode", element: <VerifyCode /> },
+        { path: "newpassword", element: <NewPassword /> },
       ],
     },
   ]);
@@ -141,9 +152,11 @@ export default function App() {
       <AuthContextProvider>
         <ProductContext>
           <CartContextProvider>
-            <StoreContextProvider>
-              <RouterProvider router={routes} />
-            </StoreContextProvider>
+            <WishListContext>
+              <StoreContextProvider>
+                <RouterProvider router={routes} />
+              </StoreContextProvider>
+            </WishListContext>
           </CartContextProvider>
         </ProductContext>
       </AuthContextProvider>

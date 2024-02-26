@@ -1,9 +1,12 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { storeContext } from "../../context/storeContext";
+import { cartcontext } from "../../context/CartContext";
+import { toast } from "react-toastify";
 
 export default function ProductDetails() {
+  let { setCounter, addToCart } = useContext(cartcontext);
+  const [loading, setLoading] = useState(true);
   let productid = useParams();
   let [product, setProduct] = useState({});
   const getproduct = async () => {
@@ -15,8 +18,16 @@ export default function ProductDetails() {
   useEffect(() => {
     getproduct();
   }, []);
-  let { counter, setCounter } = useContext(storeContext);
-
+  async function AddtoCart(productId) {
+    setLoading(false);
+    let data = await addToCart(productId);
+    console.log(data);
+    if (data.status == "success") {
+      toast.success("Product added to cart successfully");
+      setCounter(data.numOfCartItems);
+      setLoading(true);
+    }
+  }
   return (
     <>
       <div className="container my-5 ">
@@ -36,10 +47,10 @@ export default function ProductDetails() {
               </div>
             </div>
             <button
-              onClick={() => setCounter(counter + 1)}
+              onClick={() => AddtoCart(product._id)}
               className="btn bg-main text-white w-100"
             >
-              Add To Cart
+              {loading ? "Add To Cart" : "Loading..."}
             </button>
           </div>
         </div>

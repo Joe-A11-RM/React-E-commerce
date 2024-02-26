@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useFormik } from "formik";
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { authcontext } from "../../context/AuthContext";
 export default function Signin() {
@@ -123,6 +123,9 @@ export default function Signin() {
           >
             {loading ? "Login" : <i className="fa fa-spinner fa-spin"></i>}
           </button>
+          <Link to="/resetpassword">
+            <p className="mt-4 text-primary">Forget Your Password</p>
+          </Link>
         </form>
       </div>
     </div>

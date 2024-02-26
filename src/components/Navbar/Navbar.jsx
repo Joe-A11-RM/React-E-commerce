@@ -1,10 +1,13 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from "../../assests/images/freshcart-logo.svg";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { authcontext } from "../../context/AuthContext";
 import { cartcontext } from "../../context/CartContext";
+import { wishlistcontext } from "../../context/WishlistContext";
 export default function Navbar() {
   let { counter, setCounter, getCart } = useContext(cartcontext);
+  let { wishlistcounter, setwishlistCounter, getWishlist, style } =
+    useContext(wishlistcontext);
   let { token, setToken } = useContext(authcontext);
   let navigate = useNavigate();
   const logout = () => {
@@ -15,8 +18,10 @@ export default function Navbar() {
   useEffect(() => {
     (async () => {
       let data = await getCart();
-      console.log(data);
       setCounter(data.numOfCartItems);
+      let wishlistdata = await getWishlist();
+      console.log(wishlistdata);
+      setwishlistCounter(wishlistdata.count);
     })();
   }, []);
   //console.log(token);
@@ -90,9 +95,18 @@ export default function Navbar() {
                       to="wishlist"
                     >
                       Wishlist
-                      <i className="fa-solid fa-heart cart-Icon mx-2"></i>
-                      <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        4
+                      <i
+                        style={style}
+                        className="fa-solid fa-heart cart-Icon mx-2"
+                      ></i>
+                      <span className="position-absolute top-0 start-100 translate-middle  rounded-pill bg-danger">
+                        {wishlistcounter ? (
+                          <span className="cartnum position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {wishlistcounter}
+                          </span>
+                        ) : (
+                          ""
+                        )}
                       </span>
                     </NavLink>
                   </li>
